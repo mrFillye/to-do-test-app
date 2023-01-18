@@ -1,15 +1,22 @@
-import React from "react";
-import { Card } from "ui/Card";
+import { FC } from "react";
 import * as S from "./style";
 
-export const Taks = () => {
+type TaskProps = {
+  username: string;
+  email: string;
+  description: string;
+  status: string;
+};
+
+export const Task: FC<TaskProps> = ({ username, email, description, status }) => {
   return (
-    <Card>
-      <S.Title>title</S.Title>
-      <div>имя пользователя</div>
-      <div>email</div>
-      <div>текст задачи</div>
-      <div>статус</div>
-    </Card>
+    <S.Card>
+      <S.UserInfo>
+        <S.UserField>исполнитель: {username}</S.UserField>
+        <S.UserField>email: {email}</S.UserField>
+      </S.UserInfo>
+      <S.Status>Cтатус: {status}</S.Status>
+      <S.Description>{description}</S.Description>
+    </S.Card>
   );
 };

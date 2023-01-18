@@ -1,6 +1,10 @@
 import { FCWithChildren } from "types/app";
 import * as S from "./style";
 
-export const Card: FCWithChildren = ({ children }) => {
-  return <S.Card>{children}</S.Card>;
+type CardProps = {
+  className?: string;
+};
+
+export const Card: FCWithChildren<CardProps> = ({ children, className }) => {
+  return <S.Card className={className}>{children}</S.Card>;
 };
