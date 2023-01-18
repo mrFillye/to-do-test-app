@@ -1,14 +1,41 @@
-import { Input } from "ui/Input";
 import Container from "ui/Container";
-import { Card } from "ui/Card";
-import { Button } from "ui/Button";
+import { Task } from "components/Task";
+import { CreateTaskForm } from "components/CreateTaskForm";
 
 export const Home = () => {
+  const mock = [
+    {
+      id: 1,
+      title: "Test",
+      username: "Andrew",
+      email: "test@123",
+      description: "Lorem ipsum dolor sit amet,",
+      status: "pending",
+    },
+    {
+      id: 2,
+      title: "Test",
+      username: "Andrew",
+      email: "test@123",
+      description: "Lorem ipsum dolor sit amet,",
+      status: "pending",
+    },
+    {
+      id: 3,
+      title: "Test",
+      username: "Andrew",
+      email: "test@123",
+      description: "Lorem ipsum dolor sit amet,",
+      status: "pending",
+    },
+  ];
+
   return (
     <Container>
-      <Input onChange={() => {}} />
-      <Card>test</Card>
-      <Button>test</Button>
+      <CreateTaskForm />
+      {mock.map(({ id, title, username, description, status, email }) => (
+        <Task key={id} username={username} description={description} status={status} email={email} />
+      ))}
     </Container>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "pages/Home";
-import { Layout } from "features/Layout";
+import { Layout } from "features/Layout/Layout";
 import { NotFound } from "pages/NotFound";
 
 function App() {
